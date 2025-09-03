@@ -47,8 +47,8 @@ def main():
     else:
         print(f"\nThe hero has been defeated. Game Over. (｡•́︿•̀｡)")
 
-    print("Total rounds: {rounds}")
-    print("Total damage by hero: {hero_damage}")
+    print("Total rounds: " +  str(rounds))
+    print("Total damage by hero: " + str(hero_damage))
     # Final tally of goblins defeated
     print(f"\nTotal goblins defeated: {defeated_goblins} / {len(goblins)}")
 
