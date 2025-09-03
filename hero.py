@@ -34,7 +34,7 @@ class Hero:
         # TODO Implement take_damage
         # TODO We should prevent health from going into the NEGATIVE
         if self.health <= 150:
-            if bandage == 1:
+            if bandage >= 1:
                 self.health == 250
                 print("Bandage used")
                 bandage = bandage - 1
