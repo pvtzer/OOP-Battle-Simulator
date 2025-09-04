@@ -31,6 +31,8 @@ class Hero:
         bandage = 1
         self.health -= damage
         print(f"{self.name} takes {damage} damage. Health is now {self.health}.")
+        if self.health <= 0:
+            self.health = 0
         # TODO Implement take_damage
         # TODO We should prevent health from going into the NEGATIVE
         if self.health <= 150:
