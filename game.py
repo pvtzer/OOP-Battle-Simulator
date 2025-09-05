@@ -12,7 +12,7 @@ def main():
     # Create goblins ༼ ºل͟º ༽ ༼ ºل͟º ༽ ༼ ºل͟º ༽
     goblins = [Goblin(f"Goblin {i+1}", "green") for i in range(3)]
 
-    
+
     # Keep track of how many goblins were defeated
     defeated_goblins = 0
 
@@ -47,6 +47,18 @@ def main():
         print(f"\nThe hero has defeated all the goblins! ༼ ᕤ◕◡◕ ༽ᕤ")
     else:
         print(f"\nThe hero has been defeated. Game Over. (｡•́︿•̀｡)")
+    if hero.is_alive():
+        print("boss time")
+        basilisk = Basilisk("Basilisk")
+        while hero.is_alive() and basilisk.is_alive():
+            damage = hero.strike()
+            basilisk.take_damage(damage)
+            damage = basilisk.attack()
+            hero.receive_damage(damage)
+        if hero.is_alive():
+            print("yay you defeated the boss")
+        else:
+            print("you lost to the boss")
 
     print("Total rounds: " +  str(rounds))
     print("Total damage by hero: " + str(hero_damage))
