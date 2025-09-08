@@ -74,6 +74,7 @@ def main():
             print("yay you defeated the boss")
         else:
             print("you lost to the boss")
+    print("Mr speak was here")
 
     print("Total rounds: " +  str(rounds))
     print("Total damage by hero: " + str(hero_damage))
