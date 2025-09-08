@@ -7,9 +7,9 @@ class Basilisk(Enemy):
         self.health = 100
         self.attack_power = random.randint(15, 30)
     def sting(self):
-        return 10000
+        return 50
     def attack(self):
-        choice = random.choice("normal", "sting")
+        choice = random.choice(["normal", "sting"])
         if choice == "sting":
             return self.sting()
         if self.health < 50:
@@ -18,11 +18,6 @@ class Basilisk(Enemy):
             self.attack_power = 25
         elif self.health < 90:
             self.attack_power = 20
-    
-
-
-
-
         return self.attack_power
     
 

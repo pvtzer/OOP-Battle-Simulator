@@ -1,6 +1,7 @@
 import random
 from goblin import Goblin
 from hero import Hero
+from boss import Basilisk
 
 def main():
     print("Welcome to the Battle Arena!")
@@ -41,6 +42,20 @@ def main():
                 damage = goblin.attack()
                 print(f"{goblin.name} attacks hero for {damage} damage!")
                 hero.receive_damage(damage)
+
+
+    if hero.is_alive():
+        basilisk = Basilisk("Basilisk")
+        print("boss battle")
+        while hero.is_alive() and basilisk.is_alive():
+            damage = hero.strike()
+            basilisk.take_damage(damage)
+            damage = basilisk.attack()
+            hero.receive_damage(damage)
+        if hero.is_alive():
+            print(f"\nThe hero has defeated the boss! ༼ ᕤ◕◡◕ ༽ᕤ")
+        else:
+            print(f"\nThe hero has been defeated. Game Over. (｡•́︿•̀｡)")
 
     # Determine outcome
     if hero.is_alive():
